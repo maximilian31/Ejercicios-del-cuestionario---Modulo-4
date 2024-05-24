@@ -1,0 +1,42 @@
+/*
+Ejercicio 2
+Escribir en lenguaje C++ un programa que permita ingresar una matriz de n x n y nos
+indique la suma de los elementos de la diagonal principal.
+1. Pida por teclado la cantidad de filas y columnas de la matriz.
+2. Pida por teclado los números para completar la matriz.
+3. Muestre por pantalla la suma de la diagonal principal de la matriz.
+Nota: La matriz debe ser cuadrada y se debe usar un solo for para calcular la diagonal
+principal.
+*/
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    cout << "Ingrese el orden de la matriz cuadrada: \n";
+    int orden;
+    cin >> orden;
+    
+    int matriz[orden][orden]; //Aca creamos la matriz cuadrada
+    
+    //Aca le ingresamos los numeros
+    cout << "Ingrese los numeros de la matriz: \n";
+    for(int i = 0; i < orden; i++)
+    {
+       for(int j = 0; j < orden; j++)
+       {
+           cin >> matriz[i][j];
+       }
+    }
+    
+    // Para calcular la diagonal principal
+    int suma = 0;
+    for(int i = 0; i < orden; i++)
+    {
+        suma = suma + matriz[i][i]; 
+    }
+    
+    // Imprimimos la suma
+    cout << "La suma de la diagonal principal es: \n";
+    cout << suma;
+}
