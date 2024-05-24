@@ -1,0 +1,69 @@
+/*
+Escribir un programa en C++ que determine el descuento a aplicar según el medio de
+pago.
+1. Mostrar un menú indicando 2 opciones de pago:
+a. Pago con tarjeta de débito.
+b. Pago con tarjeta de crédito.
+
+2. Pida por teclado:
+a. El número de la tarjeta.
+b. El importe a pagar.
+
+3. Aplicar los siguientes descuentos sobre el importe:
+a. Débito: 20%.
+b. Crédito: 10%.
+
+4. Mostrar por pantalla:
+a. Número de tarjeta.
+b. Importe a pagar con el descuento.
+*/
+
+#include <iostream>
+
+using namespace std;
+// Las variables
+    float importe,total;
+    int numTarjeta;
+// Funciones
+void func()
+{
+            cout << "Introduzca el numero de la tarjeta: \n";
+            cin >> numTarjeta;
+            cout << "Introduzca el importe a pagar \n";
+            cin >> importe; 
+}
+
+void imprimir()
+{
+   cout << "El numero de tarjeta es: " << endl;
+   cout << numTarjeta;
+   cout << endl;
+   cout << "El importe a pagar es de: " << endl;
+   cout << total;
+}
+
+// El funcionamiento
+int main()
+{
+    float descuento = 0;;
+    int opcion;
+    cout << "Elija la opcion: \n";
+    cout << "1 - Pago con tarjeta de debito. \n";
+    cout << "2 - Pago con tarjeta de credito. \n";
+    cin >> opcion;
+    switch(opcion)
+    {
+        case 1:
+            func();
+            descuento = importe * 0.2; // descuento con debito
+            total =  importe - descuento;
+        break;
+        
+        case 2:
+            func();
+            descuento = importe * 0.1; // descuento con credito
+            total =  importe - descuento;
+        break;
+    }
+    imprimir();
+}
